@@ -13,4 +13,4 @@
 - Add image-to-image and inpainting [(edits and variations)](https://platform.openai.com/docs/api-reference/images/create-edit)
 - Add local hard-limit of 50 images / minute so we don't get rate-limited
 - Add antiprompt option to images
-- Maybe pass all prompts through moderation? Or just tell people not to fuck with the system so I don't get banned
+- Pass all prompts through [moderation](https://platform.openai.com/docs/api-reference/moderations/create)
