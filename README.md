@@ -7,3 +7,5 @@
 - [Working Copy](https://apps.apple.com/us/app/working-copy/id896694807)
 - [Vanilla menubar](https://matthewpalmer.net/vanilla/)
 - [Asset Catalogue](https://apps.apple.com/us/app/asset-catalog-creator-pro/id809625456)
+- [Hazel](https://www.noodlesoft.com/)
+- [ProtonMail](https://testflight.apple.com/join/8SxXknzD)
