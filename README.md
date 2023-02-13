@@ -9,3 +9,4 @@
 - [Asset Catalogue](https://apps.apple.com/us/app/asset-catalog-creator-pro/id809625456)
 - [Hazel](https://www.noodlesoft.com/)
 - [ProtonMail](https://testflight.apple.com/join/8SxXknzD)
+- [Readme guide](https://dev.to/scottydocs/how-to-write-a-kickass-readme-5af9)
