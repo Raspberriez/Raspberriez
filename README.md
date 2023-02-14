@@ -4,3 +4,8 @@
 - [MacWhisper](https://goodsnooze.gumroad.com/l/macwhisper)
 - [Working Copy](https://apps.apple.com/us/app/working-copy/id896694807)
 - [Readme guide](https://dev.to/scottydocs/how-to-write-a-kickass-readme-5af9)
+
+# Yumemi Feat.
+- Add key checker
+- Fix timeout for webview
+- Add custom request prefixes (AppStorage)
