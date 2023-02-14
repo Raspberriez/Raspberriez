@@ -8,4 +8,5 @@
 # Yumemi Feat.
 - Add key checker
 - Fix timeout for webview
+- Add 1.5s delay before messages can be sent on webview
 - Add custom request prefixes (AppStorage)
