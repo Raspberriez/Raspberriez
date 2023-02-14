@@ -6,7 +6,7 @@
 - [Readme guide](https://dev.to/scottydocs/how-to-write-a-kickass-readme-5af9)
 
 # Yumemi Feat.
-- Add key checker
+- Check errObj.error.code == "invalid_api_key"
 - Fix timeout for webview
 - Add 1.5s delay before messages can be sent on webview
 - Add custom request prefixes (AppStorage)
