@@ -4,3 +4,4 @@
 - [MacWhisper](https://goodsnooze.gumroad.com/l/macwhisper)
 - [Readme guide](https://dev.to/scottydocs/how-to-write-a-kickass-readme-5af9)
 - [Frida guide](https://frida.re/docs/examples/macos/)
+- [SIP-friendly debugging](https://twitter.com/SparkZheng/status/1334808131981910019)
