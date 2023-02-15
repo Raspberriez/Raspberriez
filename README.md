@@ -4,3 +4,4 @@
 - [MacWhisper](https://goodsnooze.gumroad.com/l/macwhisper)
 - [Readme guide](https://dev.to/scottydocs/how-to-write-a-kickass-readme-5af9)
 - [Frida guide](https://frida.re/docs/examples/macos/)
+- [Carbon Copy Cloner 6](https://bombich.com/)
