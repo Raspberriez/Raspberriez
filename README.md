@@ -12,5 +12,5 @@
 - Add multi-method class hooks (Jinx)
 - Rewrite shit in Luz (Jinx)
 - Add all the SD models I wanna try (Naiad)
-- Rewrite the app to fix codesign issues (Naiad)
 - Hopefully fix the fucking 8GB RAM requirement (Naiad)
+- Rewrite the app to fix codesign issues (Naiad)
