@@ -6,3 +6,5 @@
 - Change -s flag to strip, add -t flag for thinning universal binary on macOS
 - Write a simple client for whisper-rs
 - Add all the SD models I wanna try
+- Add .ipa and .app handling
+- Add pretty colours
