@@ -4,3 +4,5 @@
 - Add multi-method class hooks
 - Rewrite shit in Luz
 - Change -s flag to strip, add -t flag for thinning universal binary on macOS
+- Write a simple client for whisper-rs
+- Add all the SD models I wanna try
