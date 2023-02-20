@@ -6,7 +6,7 @@
 # Todo
 - Write a simple client for whisper-rs (???)
 - Add .ipa and .app handling (Azula)
-- Add pretty colours (Azula)
+- [Add pretty colours (Azula)](https://stackoverflow.com/questions/27807925/color-ouput-with-swift-command-line-tool)
 - Change -c flag to -s (strip), add -t (thin) flag for universal binary on macOS (Azula)
 - Make a simple SwiftUI app for AzulaKit (Azula)
 - Separate AzulaKit from Azula CLI (Azula)
