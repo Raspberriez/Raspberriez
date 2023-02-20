@@ -5,14 +5,17 @@
 
 # Todo
 - Write a simple client for whisper-rs (???)
+
 - Add .ipa and .app handling (Azula)
 - Add pretty colours (Azula)
 - Change -c flag to -s (strip), add -t (thin) flag for universal binary on macOS (Azula)
 - Check for encryption cryptid == 0 before parsing (Azula)
 - Make a simple SwiftUI app for AzulaKit (Azula)
 - Separate AzulaKit from Azula CLI (Azula)
+
 - Add multi-method class hooks (Jinx)
 - Rewrite shit in Luz (Jinx)
+
 - Add all the SD models I wanna try (Naiad)
 - Hopefully fix the fucking 8GB RAM requirement (Naiad)
 - Rewrite the app to fix codesign issues (Naiad)
