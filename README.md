@@ -8,6 +8,7 @@
 - Add .ipa and .app handling (Azula)
 - Add pretty colours (Azula)
 - Change -c flag to -s (strip), add -t (thin) flag for universal binary on macOS (Azula)
+- Check for encryption cryptid == 0 before parsing (Azula)
 - Make a simple SwiftUI app for AzulaKit (Azula)
 - Separate AzulaKit from Azula CLI (Azula)
 - Add multi-method class hooks (Jinx)
