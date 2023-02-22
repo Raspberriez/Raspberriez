@@ -39,3 +39,4 @@
 - Separate AzulaKit from Azula CLI (Azula)
 - Add all the SD models I wanna try (Naiad)
 - Rewrite the app to fix codesign issues (Naiad)
+- Rewrite EVERYTHING for cleaner code and better documentation
