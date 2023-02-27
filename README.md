@@ -4,3 +4,5 @@
 # Todo
 - Add all the SD models I wanna try (Naiad)
 - Rewrite the app to fix codesign issues (Naiad)
+- Test ElleKit on sideloaded
+- Add ability to remove hooks
