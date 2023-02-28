@@ -54,7 +54,7 @@ struct Struct2: Proto2 {
         
         Struct(
             type: Q.self,
-            something: { let aaa: Q = Self.test(nums: [1,2,3]) as! Q; aaa() },
+            something: { let aaa: Q = test(nums: [1,2,3]) as! Q; aaa() },
             nums: [4, 5, 6]
         )
     ]
