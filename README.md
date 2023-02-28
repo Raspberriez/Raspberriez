@@ -1,5 +1,5 @@
-- Add all the SD models I wanna try (Naiad)
-- Rewrite the app to fix codesign issues (Naiad)
+- Add all the SD models I wanna try
+- Rewrite the app to fix codesign issues
 - Test ElleKit on sideloaded
 - Add orig for batched hooks
 - Add GroupableFunc
