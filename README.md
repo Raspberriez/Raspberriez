@@ -17,6 +17,12 @@ protocol Proto<T> {
     var something: T { get }
 }
 
+extension Proto {
+    var _orig: String {
+        return "cccccc"
+    }
+}
+
 protocol Proto2 {
     var structs: [any Proto] { get }
 }
@@ -44,6 +50,14 @@ extension Proto2 {
         
         return nil
     }
+    
+    static func orig2<T>(nums: [Int]) -> T? {
+        if let xx: any Proto = x.first(where: { $0.nums == nums }) {
+            return xx._orig as? T
+        }
+        
+        return nil
+    }
 }
 
 typealias Q = (() -> Void)
@@ -52,7 +66,7 @@ struct Struct2: Proto2 {
     let structs: [any Proto] = [
         Struct(
             type: Q.self,
-            something: { print("aaaaaa") },
+            something: { if let ccc: String = orig2(nums: [1,2,3]) { print(ccc) } },
             nums: [1, 2, 3]
         ),
         
@@ -70,5 +84,5 @@ struct Struct2: Proto2 {
 
 let z = Struct2()
 let abc: Q = z.abc()
-abc()
+abc() // prints "cccccc"
 ```
