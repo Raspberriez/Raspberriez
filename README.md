@@ -37,8 +37,8 @@ struct Struct<T>: Proto {
 var x: [any Proto] = []
 
 extension Proto2 {
-    static func test(nums: [Int]) -> Any {
-        return x.first(where: { $0.nums == nums })!.something
+    static func test<T>(nums: [Int]) -> T {
+        return x.first(where: { $0.nums == nums })!.something as! T
     }
 }
 
@@ -54,13 +54,13 @@ struct Struct2: Proto2 {
         
         Struct(
             type: Q.self,
-            something: { let aaa: Q = test(nums: [1,2,3]) as! Q; aaa() },
+            something: { let aaa: Q = test(nums: [1,2,3]); aaa() },
             nums: [4, 5, 6]
         )
     ]
     
     func abc<T>() -> T {
-        Self.test(nums: [4,5,6]) as! T
+        Self.test(nums: [4,5,6])
     }
 }
 
