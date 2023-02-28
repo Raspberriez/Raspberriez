@@ -7,7 +7,7 @@
 "Some mysteries aren't questions to be answered but just a kind of opaque fact, a thing which exists to be not known"
 
 
-Holy shit I think I got it:
+Holy shit I think I got it. What a mess but it might work
 
 ```
 protocol Proto<T> {
@@ -42,17 +42,19 @@ extension Proto2 {
     }
 }
 
+typealias Q = (() -> Void)
+
 struct Struct2: Proto2 {
     let structs: [any Proto] = [
         Struct(
-            type: (() -> Void).self,
+            type: Q.self,
             something: { print("aaaaaa") },
             nums: [1, 2, 3]
         ),
         
         Struct(
-            type: (() -> Void).self,
-            something: { print("bbbbbb") },
+            type: Q.self,
+            something: { let aaa: Q = Self.test(nums: [1,2,3]) as! Q; aaa() },
             nums: [4, 5, 6]
         )
     ]
@@ -63,6 +65,6 @@ struct Struct2: Proto2 {
 }
 
 let z = Struct2()
-let abc: (() -> Void) = z.abc()
+let abc: Q = z.abc()
 abc()
 ```
