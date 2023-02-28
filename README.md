@@ -37,34 +37,32 @@ struct Struct<T>: Proto {
 var x: [any Proto] = []
 
 extension Proto2 {
-    static func test() {
-        for y in x {
-            print(y.nums)
-            print(y.something)
-        }
+    static func test(nums: [Int]) -> Any {
+        return x.first(where: { $0.nums == nums })!.something
     }
 }
 
 struct Struct2: Proto2 {
     let structs: [any Proto] = [
         Struct(
-            type: String.self,
-            something: "aaaaaa",
+            type: (() -> Void).self,
+            something: { print("aaaaaa") },
             nums: [1, 2, 3]
         ),
         
         Struct(
-            type: String.self,
-            something: "bbbbbb",
+            type: (() -> Void).self,
+            something: { print("bbbbbb") },
             nums: [4, 5, 6]
         )
     ]
     
-    func abc() {
-        Self.test()
+    func abc<T>() -> T {
+        Self.test(nums: [4,5,6]) as! T
     }
 }
 
 let z = Struct2()
-z.abc()
+let abc: (() -> Void) = z.abc()
+abc()
 ```
