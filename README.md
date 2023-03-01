@@ -4,17 +4,16 @@
 "Some mysteries aren't questions to be answered but just a kind of opaque fact, a thing which exists to be not known"
 
 ```
-protocol Proto {
+protocol Proto<T> {
     associatedtype T
-    
-    var type: T.Type { get }
+
     var nums: [Int] { get }
     var something: T { get }
 }
 
 extension Proto {
-    var _test: Int {
-        return 6942069
+    var _orig: String {
+        return "cccccc"
     }
 }
 
@@ -37,20 +36,18 @@ struct Struct<T>: Proto {
 
 var x: [any Proto] = []
 
-typealias AnyClosure = (Any...) -> Void
-
 extension Proto2 {
-    static func test(nums: [Int]) -> AnyClosure? {
+    static func orig<T>(nums: [Int]) -> T? {
         if let xx: any Proto = x.first(where: { $0.nums == nums }) {
-            return xx.something as? AnyClosure
+            return xx.something as? T
         }
         
         return nil
     }
     
-    static func test2<T>(nums: [Int]) -> T? {
+    static func orig2<T>(nums: [Int]) -> T? {
         if let xx: any Proto = x.first(where: { $0.nums == nums }) {
-            return xx._test as? T
+            return xx._orig as? T
         }
         
         return nil
@@ -62,24 +59,24 @@ typealias Q = (() -> Void)
 struct Struct2: Proto2 {
     let structs: [any Proto] = [
         Struct(
-            type: AnyClosure.self,
-            something: { x in if let ccc: Int = test2(nums: [1,2,3]) { print(ccc); x.forEach { print($0) } } },
+            type: Q.self,
+            something: { if let ccc: String = orig2(nums: [1,2,3]) { print(ccc) } },
             nums: [1, 2, 3]
         ),
         
         Struct(
-            type: AnyClosure.self,
-            something: { _ in if let aaa = test(nums: [1,2,3]) { aaa(69, 420, 69420, 42069) } },
+            type: Q.self,
+            something: { if let aaa: Q = orig(nums: [1,2,3]) { aaa() } },
             nums: [4, 5, 6]
         )
     ]
     
-    func abc() -> AnyClosure {
-        Self.test(nums: [4,5,6])!
+    func abc<T>() -> T {
+        Self.orig(nums: [4,5,6])!
     }
 }
 
 let z = Struct2()
-let abc = z.abc()
-abc() // prints "6942069\n69\n420\n69420\n42069"
+let abc: Q = z.abc()
+abc() // prints "cccccc"
 ```
