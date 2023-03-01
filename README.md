@@ -1,5 +1,6 @@
 - Rewrite the app to fix codesign issues
 - Test ElleKit on sideloaded
+- Convert array to closure args???
 
 "Some mysteries aren't questions to be answered but just a kind of opaque fact, a thing which exists to be not known"
 
@@ -37,16 +38,16 @@ struct Struct<T>: Proto {
 var x: [any Proto] = []
 
 extension Proto2 {
-    static func orig<T>(nums: [Int]) -> T? {
-        if let xx: any Proto = x.first(where: { $0.nums == nums }) {
+    static func orig<T>(_ nums: Any...) -> T? {
+        if let xx: any Proto = x.first(where: { $0.nums == (nums[0] as! [Int]) }) {
             return xx.something as? T
         }
         
         return nil
     }
     
-    static func orig2<T>(nums: [Int]) -> T? {
-        if let xx: any Proto = x.first(where: { $0.nums == nums }) {
+    static func orig2<T>(_ nums: Any...) -> T? {
+        if let xx: any Proto = x.first(where: { $0.nums == (nums[0] as! [Int]) }) {
             return xx._orig as? T
         }
         
@@ -54,25 +55,25 @@ extension Proto2 {
     }
 }
 
-typealias Q = (() -> Void)
+typealias Q = (Any...) -> Void
 
 struct Struct2: Proto2 {
     let structs: [any Proto] = [
         Struct(
             type: Q.self,
-            something: { if let ccc: String = orig2(nums: [1,2,3]) { print(ccc) } },
+            something: { _ in if let ccc: String = orig2([1,2,3]) { print(ccc) } },
             nums: [1, 2, 3]
         ),
         
         Struct(
             type: Q.self,
-            something: { if let aaa: Q = orig(nums: [1,2,3]) { aaa() } },
+            something: { _ in if let aaa: Q = orig([1,2,3]) { aaa() } },
             nums: [4, 5, 6]
         )
     ]
     
     func abc<T>() -> T {
-        Self.orig(nums: [4,5,6])!
+        Self.orig([4,5,6])!
     }
 }
 
