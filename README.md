@@ -1,13 +1,7 @@
-- Add all the SD models I wanna try
 - Rewrite the app to fix codesign issues
 - Test ElleKit on sideloaded
-- Add orig for batched hooks
-- Add GroupableFunc
 
 "Some mysteries aren't questions to be answered but just a kind of opaque fact, a thing which exists to be not known"
-
-
-Holy shit I think I got it. What a mess but it might work
 
 ```
 protocol Proto<T> {
@@ -18,7 +12,7 @@ protocol Proto<T> {
 }
 
 extension Proto {
-    var _orig: String {
+    var _test: String {
         return "cccccc"
     }
 }
@@ -43,7 +37,7 @@ struct Struct<T>: Proto {
 var x: [any Proto] = []
 
 extension Proto2 {
-    static func orig<T>(nums: [Int]) -> T? {
+    static func test<T>(nums: [Int]) -> T? {
         if let xx: any Proto = x.first(where: { $0.nums == nums }) {
             return xx.something as? T
         }
@@ -51,9 +45,9 @@ extension Proto2 {
         return nil
     }
     
-    static func orig2<T>(nums: [Int]) -> T? {
+    static func test2<T>(nums: [Int]) -> T? {
         if let xx: any Proto = x.first(where: { $0.nums == nums }) {
-            return xx._orig as? T
+            return xx._test as? T
         }
         
         return nil
@@ -66,19 +60,19 @@ struct Struct2: Proto2 {
     let structs: [any Proto] = [
         Struct(
             type: Q.self,
-            something: { if let ccc: String = orig2(nums: [1,2,3]) { print(ccc) } },
+            something: { if let ccc: String = test2(nums: [1,2,3]) { print(ccc) } },
             nums: [1, 2, 3]
         ),
         
         Struct(
             type: Q.self,
-            something: { if let aaa: Q = orig(nums: [1,2,3]) { aaa() } },
+            something: { if let aaa: Q = test(nums: [1,2,3]) { aaa() } },
             nums: [4, 5, 6]
         )
     ]
     
     func abc<T>() -> T {
-        Self.orig(nums: [4,5,6])!
+        Self.test(nums: [4,5,6])!
     }
 }
 
